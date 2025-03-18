@@ -11,7 +11,8 @@ const HomePage: React.FC = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Data fetched:', data);
-        return setMessage(data.message);
+        console.log('setting data to:', data.Subject);
+        setMessage(data.Subject);
       })
       .catch(error => console.error('Error fetching data:', error));
   }, []);

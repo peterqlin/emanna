@@ -97,8 +97,18 @@ const Flow: React.FC = () => {
       style={{ backgroundColor: "#F7F9FB" }}
     >
       <Panel position="top-right">
-        <button onClick={() => onLayout('TB')}>vertical layout</button>
-        <button onClick={() => onLayout('LR')}>horizontal layout</button>
+        <button
+          onClick={() => onLayout('TB')}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Vertical Layout
+        </button>
+        <button
+          onClick={() => onLayout('LR')}
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          Horizontal Layout
+        </button>
       </Panel>
       <Background />
     </ReactFlow>
