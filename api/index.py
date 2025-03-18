@@ -5,6 +5,8 @@ import imaplib
 import email
 from email import policy
 from email.parser import BytesParser
+import os
+from dotenv import load_dotenv
 
 app = FastAPI(docs_url="/api/py/docs", openapi_url="/api/py/openapi.json")
 
@@ -26,8 +28,10 @@ def get_most_recent_email():
     return get_emails()
 
 imap_server = "imap.gmail.com"
-email_address = ""
-password = "" # "IMAP/SMTP" app password
+load_dotenv(".env.local")
+
+email_address = os.getenv("EMAIL_ADDRESS")
+password = os.getenv("EMAIL_PASSWORD")
 
 def get_emails():
     mail = imaplib.IMAP4_SSL(imap_server)
