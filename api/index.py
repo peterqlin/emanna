@@ -37,7 +37,7 @@ def get_emails():
     mail = imaplib.IMAP4_SSL(imap_server)
     mail.login(email_address, password)
 
-    mail.select('"[Gmail]/All Mail"')
+    mail.select('"INBOX"')
 
     status, messages = mail.search(None, "ALL")
     email_ids = messages[0].split()
